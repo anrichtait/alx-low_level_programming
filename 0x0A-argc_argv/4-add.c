@@ -3,15 +3,15 @@
 #include <ctype.h>
 
 /**
-* main - adds two numbers
+* main - adds numbers passed as command-line arguments
 * @argc: number of arguments
 * @argv: arguments
-* Return: values...
+* Return: 0 on success, 1 on error
 */
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, sum = 0;
 	long value;
 
 	if (argc == 1)
@@ -20,17 +20,22 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		for (i = 1; i <= argc; i++)
+		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i]))
+			char *arg = argv[i];
+			int j;
+			for (j = 0; arg[j] != '\0'; j++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!isdigit(arg[j]))
+				{
+					printf("Error: Invalid input\n");
+					return 1;
+				}
 			}
-			value = strtol(argv[i], NULL, 0);
+			value = strtol(arg, NULL, 0);
 			sum += value;
 		}
 		printf("%d\n", sum);
 	}
-	return (0);
+	return 0;
 }
