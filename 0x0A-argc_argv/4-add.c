@@ -24,18 +24,21 @@ int main(int argc, char *argv[])
 		{
 			char *arg = argv[i];
 			int j;
+
 			for (j = 0; arg[j] != '\0'; j++)
 			{
 				if (!isdigit(arg[j]))
 				{
 					printf("Error: Invalid input\n");
-					return 1;
+					return (1);
 				}
 			}
 			value = strtol(arg, NULL, 0);
+
 			sum += value;
+
 		}
 		printf("%d\n", sum);
 	}
-	return 0;
+	return (0);
 }
