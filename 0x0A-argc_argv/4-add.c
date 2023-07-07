@@ -2,15 +2,22 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+/**
+* main - adds two numbers
+* @argc: number of arguments
+* @argv: arguments
+* Return: values...
+*/
+
 int main(int argc, char *argv[])
 {
 	int i, sum;
 	long value;
 
 	if (argc == 1)
-		{
-			printf("0\n");
-		}
+	{
+		printf("0\n");
+	}
 	else
 	{
 		for (i = 1; i <= argc; i++)
