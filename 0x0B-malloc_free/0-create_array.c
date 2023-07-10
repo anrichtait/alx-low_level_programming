@@ -3,7 +3,10 @@
 #include "main.h"
 
 /**
-*
+* *create_array - allocates memory and creates an array of chars
+* @size: size to allocate
+* @c: character to initialize
+* Return: NULL if fail and ptr to array if success
 */
 
 char *create_array(unsigned int size, char c)
@@ -26,5 +29,5 @@ char *create_array(unsigned int size, char c)
 		array[i] = c;
 	}
 
-		return array;
+		return (array);
 }
